@@ -93,12 +93,6 @@ MONGODB_URI=mongodb://localhost:27017/paie-attendance
 JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
 JWT_EXPIRE=7d
 
-# Email Configuration (Gmail Example)
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_SECURE=false
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASSWORD=your_app_password
 
 # OTP Configuration
 OTP_EXPIRY_MINUTES=3
