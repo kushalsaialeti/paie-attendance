@@ -1,0 +1,145 @@
+.control-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.control-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.control-header h1 {
+  color: var(--white);
+  font-size: 32px;
+  margin-bottom: 0.25rem;
+}
+
+.control-header .subtitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #c7d7ff;
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 0.35rem;
+}
+
+.chip {
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: #e8edff;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.control-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.5rem;
+}
+
+.status-card h2 {
+  color: var(--text-dark);
+  margin: 0.5rem 0;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 0.75rem;
+}
+
+.status-pill.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.muted {
+  color: var(--text-light);
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.inline-form {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background: #f4f7ff;
+  border-radius: 10px;
+  border: 1px solid #d9e4ff;
+}
+
+.inline-form h4 {
+  margin: 0 0 0.75rem;
+  color: var(--text-dark);
+}
+
+.manual-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.manual-form input {
+  flex: 1;
+  min-width: 220px;
+  padding: 12px;
+  border: 2px solid #dbeafe;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.manual-form input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.empty-state {
+  background: var(--light-blue);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--text-dark);
+}
+
+.create-card .btn {
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  .control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .control-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
