@@ -68,7 +68,7 @@ const Login = ({ roleLabel = 'Admin' }) => {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
+          <button type="submit" className="btn btn-primary btn-block " disabled={loading}>
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
