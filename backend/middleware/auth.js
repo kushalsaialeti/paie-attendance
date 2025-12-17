@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const Admin = require('../models/Admin');
+const dotenv = require('dotenv').config();
 
 // Protect routes - verify JWT token
 exports.protect = async (req, res, next) => {
