@@ -45,6 +45,47 @@ exports.getAdmin = async (req, res, next) => {
   }
 };
 
+
+
+// @desc Create initial super admin (ONE TIME)
+// @route POST /api/setup/super-admin
+// @access Public (disable after use)
+exports.createSuperAdmin = async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+
+    // Check if super admin already exists
+    const existingSuperAdmin = await Admin.findOne({ role: "super-admin" });
+    if (existingSuperAdmin) {
+      return res.status(400).json({
+        success: false,
+        message: "Super admin already exists"
+      });
+    }
+
+    const superAdmin = await Admin.create({
+      name,
+      email,
+      password,
+      role: "super-admin"
+    });
+
+    res.status(201).json({
+      success: true,
+      message: "Super admin created successfully",
+      data: {
+        id: superAdmin._id,
+        name: superAdmin.name,
+        email: superAdmin.email,
+        role: superAdmin.role
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+};
+
+
 // @desc    Create co-admin
 // @route   POST /api/admins
 // @access  Private (Super Admin only)

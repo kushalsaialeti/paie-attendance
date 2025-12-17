@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   getAdmins,
   getAdmin,
+  createSuperAdmin,
   createAdmin,
   updateAdmin,
   deleteAdmin,
@@ -11,12 +12,15 @@ const {
 const { protect, authorize } = require('../middleware/auth');
 
 // All routes require authentication and super-admin role
+router.route('/setup/super-admin')
+  .post(createSuperAdmin);
 router.use(protect);
 router.use(authorize('super-admin'));
 
 router.route('/')
   .get(getAdmins)
   .post(createAdmin);
+
 
 router.route('/:id')
   .get(getAdmin)

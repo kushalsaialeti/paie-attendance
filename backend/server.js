@@ -32,7 +32,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Trust proxy (for getting correct IP addresses)
-app.set('trust proxy', true);
+// Avoid using boolean `true` which is permissive and can bypass IP rate-limiting.
+// Use `TRUST_PROXY` env var to explicitly configure when behind a trusted proxy.
+const trustProxy = process.env.TRUST_PROXY !== undefined ? process.env.TRUST_PROXY : 'loopback';
+app.set('trust proxy', trustProxy);
 
 // Routes
 app.use('/api/auth', authRoutes);
