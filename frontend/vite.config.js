@@ -13,8 +13,18 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+
+  // IMPORTANT: ensures correct routing & asset resolution on Vercel
+  base: "/",
+
   build: {
-    outDir: "dist"
+    outDir: "dist",
+    emptyOutDir: true,
+    sourcemap: false
+  },
+
+  server: {
+    port: 5173,
+    strictPort: true
   }
 });
-
